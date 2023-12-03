@@ -3,11 +3,20 @@ import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 
 // Extend the default theme
 const customTheme = extendTheme({
+  styles: {
+    global: () => ({
+      body: {
+        bg: "#9BBEC8",
+      },
+    }),
+  },
   colors: {
     brand: {
-      900: "#1a202c",
-      800: "#2d3748",
-      // more colors
+      900: "#164863",
+      800: "#427D9D",
+      700: "#9BBEC8",
+      600: "#DDF2FD",
+      500: "#ececec",
     },
   },
   // other theme customizations

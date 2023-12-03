@@ -1,12 +1,15 @@
 import Layout from "../components/Layout";
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Container, Text } from "@chakra-ui/react";
+import OddsTypeSelector from "@/components/OddsTypeSelector";
 
 export default function Index() {
   return (
     <Layout>
-      <Box bg="brand.900" color="white" p={4}>
-        <Text fontSize="xl">Hello World</Text>
-      </Box>
+      <Container maxW="720px" bg="brand.800" px={0}>
+        <Box>
+          <OddsTypeSelector />
+        </Box>
+      </Container>
     </Layout>
   );
 }
