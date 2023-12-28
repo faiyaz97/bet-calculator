@@ -28,6 +28,7 @@ const RadioCard: React.FC<RadioCardProps> = (props) => {
         align="center"
         justify="center"
         height="100%"
+        whiteSpace="nowrap"
         borderColor="brand.900"
         borderWidth="1px"
         px={5}
@@ -47,12 +48,33 @@ const RadioCard: React.FC<RadioCardProps> = (props) => {
   );
 };
 
-// OddsTypeSelector component
-const OddsTypeSelector = () => {
-  const options = ["Fractional", "Decimal"];
-
+// BetTypeSelector component
+const BetTypeSelector = () => {
+  const options = [
+    "Single",
+    "Double",
+    "Treble",
+    "Fourfold",
+    "Fivefold",
+    "Sixfold",
+    "Sevenfold",
+    "Eightfold",
+    "Accumulator",
+    "Trixie",
+    "Yankee",
+    "Canadian / Super Yankee",
+    "Patent",
+    "Lucky 15",
+    "Lucky 31",
+    "Lucky 63",
+    "Heinz",
+    "Super Heinz",
+    "Goliath",
+    "Super Heinz with Singles",
+    "Super Goliath",
+  ];
   const { getRootProps, getRadioProps } = useRadioGroup({
-    name: "oddsType",
+    name: "betType",
     defaultValue: options[0],
     onChange: (value) => console.log(value), // Replace with your handler
   });
@@ -60,17 +82,18 @@ const OddsTypeSelector = () => {
   const group = getRootProps();
 
   return (
-    <Flex
-      align="center"
-      justify="center"
-      bg="linear-gradient(#206a92 50%, #164863 50%)"
-      borderColor="brand.900"
-      borderWidth="1px"
-    >
-      <Text fontSize="xl" mx={10} color="white">
-        ODDS TYPE
-      </Text>
-      <Flex {...group} flexWrap="wrap" flexGrow={1}>
+    <Box bg="brand.900" borderColor="brand.900" borderWidth="1px">
+      <Flex
+        bg="linear-gradient(#206a92 50%, #164863 50%)"
+        height="38px"
+        align="center"
+        justify="center"
+      >
+        <Text fontSize="xl" mx={10} color="white">
+          BET TYPE
+        </Text>
+      </Flex>
+      <Flex {...group} wrap="wrap">
         {options.map((value) => {
           const radio = getRadioProps({ value });
           return (
@@ -80,8 +103,8 @@ const OddsTypeSelector = () => {
           );
         })}
       </Flex>
-    </Flex>
+    </Box>
   );
 };
 
-export default OddsTypeSelector;
+export default BetTypeSelector;

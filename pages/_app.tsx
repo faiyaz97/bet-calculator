@@ -15,8 +15,9 @@ const customTheme = extendTheme({
       900: "#164863",
       800: "#427D9D",
       700: "#9BBEC8",
-      600: "#DDF2FD",
-      500: "#ececec",
+      600: "#a5c7d9",
+      500: "#DDF2FD",
+      400: "#ececec",
     },
   },
   // other theme customizations
