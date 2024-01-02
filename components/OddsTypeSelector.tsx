@@ -28,8 +28,6 @@ const RadioCard: React.FC<RadioCardProps> = (props) => {
         align="center"
         justify="center"
         height="100%"
-        borderColor="brand.900"
-        borderWidth="1px"
         px={5}
         py={3}
         _checked={{
@@ -41,7 +39,7 @@ const RadioCard: React.FC<RadioCardProps> = (props) => {
           boxShadow: "lg",
         }}
       >
-        <Text fontSize="lg">{props.children}</Text>
+        <Text fontSize={{ base: "sm", sm: "xl" }}>{props.children}</Text>
       </Flex>
     </Box>
   );
@@ -64,12 +62,18 @@ const OddsTypeSelector = () => {
       align="center"
       justify="center"
       bg="linear-gradient(#206a92 50%, #164863 50%)"
-      borderColor="brand.900"
-      borderWidth="1px"
+      height="40px"
     >
-      <Text fontSize="xl" mx={10} color="white">
-        ODDS TYPE
-      </Text>
+      <Flex
+        width={{ base: "100px", sm: "150px" }}
+        align="center"
+        justify="center"
+      >
+        <Text fontSize={{ base: "sm", sm: "xl" }} color="white">
+          ODDS TYPE
+        </Text>
+      </Flex>
+
       <Flex {...group} flexWrap="wrap" flexGrow={1}>
         {options.map((value) => {
           const radio = getRadioProps({ value });

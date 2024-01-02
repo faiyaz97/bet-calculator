@@ -29,8 +29,6 @@ const RadioCard: React.FC<RadioCardProps> = (props) => {
         justify="center"
         height="100%"
         whiteSpace="nowrap"
-        borderColor="brand.900"
-        borderWidth="1px"
         px={5}
         py={3}
         _checked={{
@@ -42,7 +40,7 @@ const RadioCard: React.FC<RadioCardProps> = (props) => {
           boxShadow: "lg",
         }}
       >
-        <Text fontSize="lg">{props.children}</Text>
+        <Text fontSize={{ base: "sm", sm: "xl" }}>{props.children}</Text>
       </Flex>
     </Box>
   );
@@ -82,14 +80,14 @@ const BetTypeSelector = () => {
   const group = getRootProps();
 
   return (
-    <Box bg="brand.900" borderColor="brand.900" borderWidth="1px">
+    <Box bg="brand.900">
       <Flex
         bg="linear-gradient(#206a92 50%, #164863 50%)"
-        height="38px"
+        height="40px"
         align="center"
         justify="center"
       >
-        <Text fontSize="xl" mx={10} color="white">
+        <Text fontSize={{ base: "sm", sm: "xl" }} color="white">
           BET TYPE
         </Text>
       </Flex>
