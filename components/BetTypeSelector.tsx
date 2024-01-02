@@ -46,7 +46,6 @@ const RadioCard: React.FC<RadioCardProps> = (props) => {
   );
 };
 
-// BetTypeSelector component
 const BetTypeSelector = () => {
   const options = [
     "Single",

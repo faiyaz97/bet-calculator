@@ -3,6 +3,7 @@ import { Box, Container, Text } from "@chakra-ui/react";
 import OddsTypeSelector from "@/components/OddsTypeSelector";
 import BetTypeSelector from "@/components/BetTypeSelector";
 import ConditionsSelector from "@/components/ConditionsSelector";
+import StakeInput from "@/components/StakeInput";
 
 export default function Index() {
   return (
@@ -12,6 +13,7 @@ export default function Index() {
           <BetTypeSelector />
           <OddsTypeSelector />
           <ConditionsSelector />
+          <StakeInput />
         </Box>
       </Container>
     </Layout>

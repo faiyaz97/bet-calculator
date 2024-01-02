@@ -1,8 +1,7 @@
-import React, { ReactNode } from "react";
-import { Box, Checkbox, Flex, Stack, Text } from "@chakra-ui/react";
+import React from "react";
+import { Checkbox, Flex, Text } from "@chakra-ui/react";
 
-// BetTypeSelector component
-const BetTypeSelector = () => {
+const ConditionsSelector = () => {
   return (
     <Flex height="40px" bg="linear-gradient(#206a92 50%, #164863 50%)">
       <Flex
@@ -36,4 +35,4 @@ const BetTypeSelector = () => {
   );
 };
 
-export default BetTypeSelector;
+export default ConditionsSelector;
