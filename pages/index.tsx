@@ -4,6 +4,7 @@ import OddsTypeSelector from "@/components/OddsTypeSelector";
 import BetTypeSelector from "@/components/BetTypeSelector";
 import ConditionsSelector from "@/components/ConditionsSelector";
 import StakeInput from "@/components/StakeInput";
+import BetSelections from "@/components/BetSelections";
 
 export default function Index() {
   return (
@@ -14,6 +15,7 @@ export default function Index() {
           <OddsTypeSelector />
           <ConditionsSelector />
           <StakeInput />
+          <BetSelections />
         </Box>
       </Container>
     </Layout>

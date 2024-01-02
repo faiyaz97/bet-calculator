@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useState } from "react";
 import {
   Box,
   Flex,
@@ -7,6 +7,12 @@ import {
   useRadioGroup,
   Text,
 } from "@chakra-ui/react";
+
+const [betType, setBetType] = useState("Single");
+
+const handleBetTypeChange = (value: string) => {
+  setBetType(value);
+};
 
 interface RadioCardProps extends UseRadioProps {
   children: ReactNode;
@@ -73,7 +79,7 @@ const BetTypeSelector = () => {
   const { getRootProps, getRadioProps } = useRadioGroup({
     name: "betType",
     defaultValue: options[0],
-    onChange: (value) => console.log(value), // Replace with your handler
+    onChange: (value) => handleBetTypeChange(value),
   });
 
   const group = getRootProps();
