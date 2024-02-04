@@ -7,12 +7,7 @@ import {
   useRadioGroup,
   Text,
 } from "@chakra-ui/react";
-
-const [betType, setBetType] = useState("Single");
-
-const handleBetTypeChange = (value: string) => {
-  setBetType(value);
-};
+import { useGlobalContext } from "@/app/Context/store";
 
 interface RadioCardProps extends UseRadioProps {
   children: ReactNode;
@@ -53,6 +48,13 @@ const RadioCard: React.FC<RadioCardProps> = (props) => {
 };
 
 const BetTypeSelector = () => {
+  const { betType, setBetType } = useGlobalContext();
+
+  const handleBetTypeChange = (value: string) => {
+    console.log(value);
+    setBetType(value);
+  };
+
   const options = [
     "Single",
     "Double",
@@ -78,7 +80,7 @@ const BetTypeSelector = () => {
   ];
   const { getRootProps, getRadioProps } = useRadioGroup({
     name: "betType",
-    defaultValue: options[0],
+    defaultValue: betType,
     onChange: (value) => handleBetTypeChange(value),
   });
 

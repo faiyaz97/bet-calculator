@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect } from "react";
 import {
   Box,
   Flex,
@@ -7,6 +7,7 @@ import {
   useRadioGroup,
   Text,
 } from "@chakra-ui/react";
+import { useGlobalContext } from "@/app/Context/store";
 
 interface RadioCardProps extends UseRadioProps {
   children: ReactNode;
@@ -47,12 +48,13 @@ const RadioCard: React.FC<RadioCardProps> = (props) => {
 
 // OddsTypeSelector component
 const OddsTypeSelector = () => {
+  const { oddsType, setOddsType } = useGlobalContext();
   const options = ["Fractional", "Decimal"];
 
   const { getRootProps, getRadioProps } = useRadioGroup({
     name: "oddsType",
-    defaultValue: options[0],
-    onChange: (value) => console.log(value), // Replace with your handler
+    defaultValue: oddsType,
+    onChange: (value) => setOddsType(value), // Replace with your handler
   });
 
   const group = getRootProps();
