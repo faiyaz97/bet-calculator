@@ -46,10 +46,10 @@ const GlobalContext = createContext<ContextProps>({
 export const GlobalContextProvider = ({ children }) => {
   const [betStake, setBetStake] = useState(0);
   const [betType, setBetType] = useState("Single");
-  const [oddsType, setOddsType] = useState("Decimal");
-  const [conditionEachWay, setConditionEachWay] = useState(false);
-  const [conditionRuleFour, setConditionRuleFour] = useState(false);
-  const [conditionDeadHeat, setConditionDeadHeat] = useState(false);
+  const [oddsType, setOddsType] = useState("Fractional");
+  const [conditionEachWay, setConditionEachWay] = useState(true);
+  const [conditionRuleFour, setConditionRuleFour] = useState(true);
+  const [conditionDeadHeat, setConditionDeadHeat] = useState(true);
 
   return (
     <GlobalContext.Provider
