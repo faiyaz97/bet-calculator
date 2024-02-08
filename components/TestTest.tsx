@@ -18,6 +18,8 @@ const TestTest = () => {
     setConditionRuleFour,
     conditionDeadHeat,
     setConditionDeadHeat,
+    selectionsData,
+    setSelectionsData,
   } = useGlobalContext();
 
   useEffect(() => {});
@@ -25,8 +27,10 @@ const TestTest = () => {
     <Flex height="40px" bg="linear-gradient(#206a92 50%, #164863 50%)">
       <Flex>
         <Text fontSize={{ base: "sm", sm: "xl" }} color="white">
-          {betType} {oddsType} {betStake} {conditionEachWay} {conditionRuleFour}{" "}
-          {conditionDeadHeat}
+          {betType} {oddsType} {betStake}
+          {selectionsData.map((e, i) => (
+            <p key={i}>{e.oddsDecimal}</p>
+          ))}
         </Text>
       </Flex>
     </Flex>

@@ -8,6 +8,16 @@ import {
   useState,
 } from "react";
 
+type DataType = {
+  oddsNumerator: number;
+  oddsDenominator: number;
+  oddsDecimal: number;
+  betResult: string;
+  ewType: string;
+  ruleFourValue: number;
+  dhType: string;
+};
+
 interface ContextProps {
   betType: string;
   setBetType: Dispatch<SetStateAction<string>>;
@@ -21,26 +31,27 @@ interface ContextProps {
   setConditionDeadHeat: Dispatch<SetStateAction<boolean>>;
   betStake: number;
   setBetStake: Dispatch<SetStateAction<number>>;
+
+  selectionsData: DataType[];
+  setSelectionsData: Dispatch<SetStateAction<DataType[]>>;
 }
 
 const GlobalContext = createContext<ContextProps>({
   betType: "",
   setBetType: (): string => "",
-
   oddsType: "",
   setOddsType: (): string => "",
-
   conditionEachWay: false,
   setConditionEachWay: (): boolean => false,
-
   conditionRuleFour: false,
   setConditionRuleFour: (): boolean => false,
-
   conditionDeadHeat: false,
   setConditionDeadHeat: (): boolean => false,
-
   betStake: 0,
   setBetStake: (): number => 0,
+
+  selectionsData: [],
+  setSelectionsData: (): DataType[] => [],
 });
 
 export const GlobalContextProvider = ({ children }) => {
@@ -50,6 +61,8 @@ export const GlobalContextProvider = ({ children }) => {
   const [conditionEachWay, setConditionEachWay] = useState(true);
   const [conditionRuleFour, setConditionRuleFour] = useState(true);
   const [conditionDeadHeat, setConditionDeadHeat] = useState(true);
+
+  const [selectionsData, setSelectionsData] = useState<[] | DataType[]>([]);
 
   return (
     <GlobalContext.Provider
@@ -66,6 +79,9 @@ export const GlobalContextProvider = ({ children }) => {
         setConditionRuleFour,
         conditionDeadHeat,
         setConditionDeadHeat,
+
+        selectionsData,
+        setSelectionsData,
       }}
     >
       {children}
