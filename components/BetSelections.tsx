@@ -37,6 +37,7 @@ const BetSelections = () => {
       ruleFourValue: conditionRuleFour ? 0 : null, // Default value for rule 4
       dhType: conditionDeadHeat ? "2 horses" : "", // Default value for dead heat
     };
+    console.log(selectionsData);
     setSelectionsData([...selectionsData, newSelection]);
   };
 
@@ -205,14 +206,16 @@ const BetSelections = () => {
                   </Select>
                 </Td>
               )}
-              <Td paddingX="1">
-                <IconButton
-                  aria-label="Remove selection"
-                  icon={<CloseIcon />}
-                  onClick={() => removeSelection(index)}
-                  size="xs"
-                />
-              </Td>
+              {selectionsData.length != 1 && (
+                <Td paddingX="1">
+                  <IconButton
+                    aria-label="Remove selection"
+                    icon={<CloseIcon />}
+                    onClick={() => removeSelection(index)}
+                    size="xs"
+                  />
+                </Td>
+              )}
             </Tr>
           ))}
         </Tbody>

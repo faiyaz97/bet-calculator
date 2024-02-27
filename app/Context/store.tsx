@@ -62,7 +62,17 @@ export const GlobalContextProvider = ({ children }) => {
   const [conditionRuleFour, setConditionRuleFour] = useState(true);
   const [conditionDeadHeat, setConditionDeadHeat] = useState(true);
 
-  const [selectionsData, setSelectionsData] = useState<[] | DataType[]>([]);
+  const [selectionsData, setSelectionsData] = useState([
+    {
+      oddsNumerator: 2,
+      oddsDenominator: 1,
+      oddsDecimal: 2.0,
+      betResult: "Win",
+      ewType: conditionEachWay ? "1/4" : "",
+      ruleFourValue: conditionRuleFour ? 0 : null,
+      dhType: conditionDeadHeat ? "2 horses" : "",
+    },
+  ]);
 
   return (
     <GlobalContext.Provider

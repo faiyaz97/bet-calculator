@@ -6,6 +6,7 @@ import ConditionsSelector from "@/components/ConditionsSelector";
 import StakeInput from "@/components/StakeInput";
 import BetSelections from "@/components/BetSelections";
 import TestTest from "@/components/TestTest";
+import CalculationResult from "@/components/CalculationResult";
 
 export default function Index() {
   return (
@@ -17,7 +18,7 @@ export default function Index() {
           <ConditionsSelector />
           <StakeInput />
           <BetSelections />
-          <TestTest />
+          <CalculationResult />
         </Box>
       </Container>
     </Layout>
